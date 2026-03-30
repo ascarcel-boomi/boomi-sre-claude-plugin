@@ -35,7 +35,7 @@ Add to your `~/.claude/settings.json`:
   "extraKnownMarketplaces": {
     "cam-sre": {
       "source": "github",
-      "repo": "Mashery-Boomi/cam-sre-claude-plugin"
+      "repo": "ascarcel-boomi/cam-sre-claude-plugin"
     }
   },
   "enabledPlugins": {
@@ -47,7 +47,7 @@ Add to your `~/.claude/settings.json`:
 ### Option 2: Via /plugin command
 
 ```
-/plugin install cam-sre from github:Mashery-Boomi/cam-sre-claude-plugin
+/plugin install cam-sre from github:ascarcel-boomi/cam-sre-claude-plugin
 ```
 
 ## MCP Server Credentials
