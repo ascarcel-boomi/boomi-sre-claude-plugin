@@ -1,0 +1,9 @@
+{
+  "name": "cam-sre",
+  "description": "CAM SRE team plugin — shared hooks, skills, agents, and conventions for Boomi APIM SRE workflows with Jira, AWS, Jenkins, Grafana, and GitHub",
+  "version": "1.0.0",
+  "author": {
+    "name": "CAM SRE Team",
+    "email": "adam.scarcella@boomi.com"
+  }
+}

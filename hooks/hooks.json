@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE=\"$CLAUDE_FILE_PATH\"; if [ -n \"$FILE\" ] && echo \"$FILE\" | grep -q '.swift$'; then xcrun swift-format format --in-place \"$FILE\" 2>/dev/null || true; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '{\"systemMessage\": \"CONTEXT COMPACTED. Re-read the project CLAUDE.md before continuing. Key reminders: (1) Verify work before claiming done (2) Use project conventions and patterns (3) Check current state of code before making assumptions.\"}'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f Package.swift ]; then swift build 2>&1 | tail -5; elif [ -f package.json ]; then npm run build 2>&1 | tail -5; elif [ -f requirements.txt ] || [ -f pyproject.toml ]; then python3 -m py_compile $(git diff --name-only HEAD -- '*.py' | head -5) 2>&1 || true; fi",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
