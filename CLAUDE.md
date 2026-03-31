@@ -32,12 +32,17 @@ All HTTP from corporate machines goes through Zscaler. Use the Zscaler root CA c
 - Workspace: `boomii`
 - Credentials expire frequently. Alert user on auth errors rather than retrying.
 
-### Development Workflow
-1. **Always brainstorm first** — use planning mode before writing code
-2. **Write a PRD** for any new feature before implementation
-3. **Agent Teams** for development: Backend Dev → Frontend Dev → QA Engineer
-4. **Verify before done** — run build/test/check, never claim success without proof
-5. **Update CLAUDE.md** after significant changes to a codebase
+### Development Workflow — MANDATORY
+
+**Every new feature or significant change MUST follow this workflow. Do NOT write application code without completing steps 1-2 first.**
+
+1. **Brainstorm** — invoke the `feature-dev` skill (or `superpowers:brainstorming` directly). No code until the design is approved by the user.
+2. **Write a PRD** — structured requirements doc saved to `docs/prd-<feature>.md`. This is the contract for the Agent Team. The user must approve the PRD before implementation begins.
+3. **Agent Teams** — spawn Backend Dev → Frontend Dev → QA Engineer with the PRD. Each agent reads the project's CLAUDE.md first and verifies the build compiles before reporting done.
+4. **Verify before done** — build must pass, QA must sign off, never claim success without proof.
+5. **Update CLAUDE.md** — if architecture or patterns changed, update before closing the session.
+
+**Exceptions:** Bug fixes, config changes, and one-line tweaks do not require this workflow. If you're unsure, use it.
 
 ## Team-Specific Configuration
 

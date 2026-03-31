@@ -23,6 +23,7 @@ A Claude Code plugin that provides shared hooks, agents, skills, and conventions
 ### Skills
 | Skill | Purpose |
 |-------|---------|
+| **feature-dev** | Mandatory workflow for new features — brainstorm → PRD → Agent Team (Backend Dev → Frontend Dev → QA Engineer) |
 | **sre-onboard** | New team member setup — credential discovery, validation, team config |
 
 ### Commands
@@ -89,6 +90,8 @@ boomi-sre-claude-plugin/
   hooks/
     hooks.json               # PostToolUse, PostCompact, Stop hooks
   skills/                    # Contributed skills go here
+    feature-dev/
+      SKILL.md
     sre-onboard/
       SKILL.md
   templates/
