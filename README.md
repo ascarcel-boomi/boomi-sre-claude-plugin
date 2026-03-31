@@ -43,7 +43,7 @@ Add to your `~/.claude/settings.json`:
   "extraKnownMarketplaces": {
     "boomi-sre": {
       "source": "github",
-      "repo": "ascarcel-boomi/cam-sre-claude-plugin"
+      "repo": "ascarcel-boomi/boomi-sre-claude-plugin"
     }
   },
   "enabledPlugins": {
